@@ -1,0 +1,2508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAFHH SPORTS — Something Powerful Is Coming</title>
+    <meta name="description"
+        content="MAFHH SPORTS — Premium sportswear, gym wear & accessories. Mats, belts, bags, bottles & more. Built for performance. Designed for impact. Bhilai, Chhattisgarh.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ═══════════════════════════════════════════
+   ROOT & RESET
+   ═══════════════════════════════════════════ */
+        :root {
+            --bg: #0b0b0b;
+            --bg2: #101010;
+            --card: #141414;
+            --card2: #181818;
+            --border: #1e1e1e;
+            --border2: #282828;
+            --g900: #161616;
+            --g800: #222;
+            --g700: #333;
+            --g600: #444;
+            --g500: #666;
+            --g400: #999;
+            --g300: #b0b0b0;
+            --g200: #d0d0d0;
+            --g100: #eaeaea;
+            --w: #f5f5f5;
+            --wp: #fff;
+            --r: #c8102e;
+            --rb: #e63946;
+            --rg: rgba(200, 16, 46, .12);
+            --rd: #7a0c1e;
+            --font: 'Outfit', system-ui, -apple-system, sans-serif;
+            --ease: cubic-bezier(.19, 1, .22, 1);
+            --ease2: cubic-bezier(.76, 0, .24, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: var(--r) var(--bg)
+        }
+
+        html::-webkit-scrollbar {
+            width: 5px
+        }
+
+        html::-webkit-scrollbar-track {
+            background: var(--bg)
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background: var(--r);
+            border-radius: 5px
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--w);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased
+        }
+
+        ::selection {
+            background: var(--r);
+            color: #fff
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button {
+            cursor: pointer;
+            font-family: var(--font)
+        }
+
+        /* ═══════ PRELOADER ═══════ */
+        #pre {
+            position: fixed;
+            inset: 0;
+            z-index: 100000;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity .9s var(--ease2), visibility .9s
+        }
+
+        #pre.done {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none
+        }
+
+        .pl-logo {
+            font-weight: 900;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            letter-spacing: .35em;
+            text-transform: uppercase
+        }
+
+        .pl-logo b {
+            color: var(--r);
+            font-weight: 900
+        }
+
+        .pl-bar {
+            width: 160px;
+            height: 1px;
+            background: var(--g700);
+            margin-top: 28px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1px
+        }
+
+        .pl-bar i {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: var(--r);
+            transition: width .15s
+        }
+
+        .pl-pct {
+            margin-top: 14px;
+            font-size: .65rem;
+            letter-spacing: .3em;
+            color: var(--g500)
+        }
+
+        /* ═══════ CURSOR ═══════ */
+        .cur {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--r);
+            pointer-events: none;
+            z-index: 99999;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%)
+        }
+
+        .cur-f {
+            position: fixed;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(200, 16, 46, .3);
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition: width .35s, height .35s, border-color .35s
+        }
+
+        .cur-f.on {
+            width: 68px;
+            height: 68px;
+            border-color: var(--rb)
+        }
+
+        @media(max-width:1024px) {
+
+            .cur,
+            .cur-f {
+                display: none !important
+            }
+
+            body {
+                cursor: auto !important
+            }
+        }
+
+        /* ═══════ GRAIN ═══════ */
+        .grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: .028;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")
+        }
+
+        /* ═══════ NAV ═══════ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 26px clamp(20px, 5vw, 60px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9000;
+            transition: all .5s var(--ease2)
+        }
+
+        .nav.sc {
+            padding: 14px clamp(20px, 5vw, 60px);
+            background: rgba(11, 11, 11, .88);
+            backdrop-filter: blur(28px) saturate(1.3);
+            border-bottom: 1px solid rgba(255, 255, 255, .03)
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .logo-m {
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid var(--r);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: .95rem;
+            color: var(--r);
+            background: rgba(200, 16, 46, .06);
+            position: relative;
+            overflow: hidden
+        }
+
+        .logo-m::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(200, 16, 46, .08), transparent 30%);
+            animation: spin 4s linear infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .logo-t {
+            font-weight: 800;
+            font-size: clamp(.8rem, 1.3vw, 1.05rem);
+            letter-spacing: .22em;
+            text-transform: uppercase
+        }
+
+        .logo-t b {
+            color: var(--r);
+            font-weight: 800
+        }
+
+        .nav-r {
+            display: flex;
+            align-items: center;
+            gap: 24px
+        }
+
+        .nav-loc {
+            font-size: .58rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--g400);
+            display: flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .nav-loc svg {
+            width: 11px;
+            height: 11px;
+            fill: var(--r)
+        }
+
+        .nav-btn {
+            padding: 10px 24px;
+            border: 1px solid var(--r);
+            background: 0;
+            color: var(--w);
+            font-size: .58rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            transition: color .4s
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--r);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .45s var(--ease2);
+            z-index: -1
+        }
+
+        .nav-btn:hover::before {
+            transform: scaleX(1)
+        }
+
+        /* ═══════ PARALLAX CORE ═══════ */
+        .px {
+            position: relative;
+            overflow: hidden
+        }
+
+        .px-bg {
+            position: absolute;
+            top: -20%;
+            left: 0;
+            width: 100%;
+            height: 140%;
+            z-index: 0;
+            will-change: transform
+        }
+
+        .px-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .px-over {
+            position: absolute;
+            inset: 0;
+            z-index: 1
+        }
+
+        /* ═══════ HERO ═══════ */
+        .hero {
+            height: 100vh;
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero .px-bg img {
+            filter: brightness(.3) contrast(1.15) saturate(.7)
+        }
+
+        .hero .px-over {
+            background: linear-gradient(180deg, rgba(11, 11, 11, .55)0%, rgba(11, 11, 11, .15)40%, rgba(11, 11, 11, .75)100%), radial-gradient(ellipse at 35% 45%, rgba(200, 16, 46, .07), transparent 55%)
+        }
+
+        .hero-c {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 940px;
+            padding: 0 clamp(20px, 5vw, 60px)
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 22px;
+            border: 1px solid rgba(200, 16, 46, .25);
+            border-radius: 100px;
+            font-size: .55rem;
+            letter-spacing: .32em;
+            text-transform: uppercase;
+            color: var(--rb);
+            font-weight: 500;
+            background: rgba(200, 16, 46, .04);
+            opacity: 0;
+            transform: translateY(16px);
+            animation: up 1s var(--ease) 1.4s forwards
+        }
+
+        .hero-tag i {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--rb);
+            animation: pulse 1.8s ease-in-out infinite
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .3;
+                transform: scale(.7)
+            }
+        }
+
+        .hero-h1 {
+            font-size: clamp(2.6rem, 7.5vw, 6.5rem);
+            font-weight: 800;
+            line-height: .94;
+            letter-spacing: -.04em;
+            margin: 32px 0 24px
+        }
+
+        .hero-h1 .ln {
+            display: block;
+            overflow: hidden
+        }
+
+        .hero-h1 .ln span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(110%);
+            animation: wu 1.4s var(--ease) forwards
+        }
+
+        .hero-h1 .ln:nth-child(1) span {
+            animation-delay: 1.7s
+        }
+
+        .hero-h1 .ln:nth-child(2) span {
+            animation-delay: 1.85s
+        }
+
+        .hero-h1 .ln:nth-child(3) span {
+            animation-delay: 2s
+        }
+
+        @keyframes wu {
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes up {
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .hero-h1 .ac {
+            color: var(--rb)
+        }
+
+        .hero-sub {
+            font-size: clamp(.85rem, 1.4vw, 1.12rem);
+            font-weight: 300;
+            color: var(--g300);
+            line-height: 1.7;
+            max-width: 560px;
+            margin: 0 auto 42px;
+            opacity: 0;
+            transform: translateY(18px);
+            animation: up 1s var(--ease) 2.4s forwards
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(18px);
+            animation: up 1s var(--ease) 2.7s forwards
+        }
+
+        .bf {
+            padding: 16px 42px;
+            background: var(--r);
+            color: #fff;
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow .4s, transform .3s
+        }
+
+        .bf:hover {
+            box-shadow: 0 10px 45px rgba(200, 16, 46, .35);
+            transform: translateY(-2px)
+        }
+
+        .bf::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, .15) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform .6s
+        }
+
+        .bf:hover::after {
+            transform: translateX(100%)
+        }
+
+        .bg {
+            padding: 16px 42px;
+            background: 0;
+            border: 1px solid rgba(255, 255, 255, .15);
+            color: var(--w);
+            font-size: .65rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            transition: all .4s
+        }
+
+        .bg:hover {
+            border-color: var(--w);
+            background: rgba(255, 255, 255, .04)
+        }
+
+        .hero-sc {
+            position: absolute;
+            bottom: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            animation: up 1s ease 3.2s forwards
+        }
+
+        .hero-sc span {
+            font-size: .5rem;
+            letter-spacing: .38em;
+            text-transform: uppercase;
+            color: var(--g500)
+        }
+
+        .sc-line {
+            width: 1px;
+            height: 44px;
+            background: var(--g700);
+            position: relative;
+            overflow: hidden
+        }
+
+        .sc-line::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--r);
+            animation: scd 2.2s ease-in-out infinite
+        }
+
+        @keyframes scd {
+            0% {
+                top: -100%
+            }
+
+            50% {
+                top: 100%
+            }
+
+            100% {
+                top: 100%
+            }
+        }
+
+        /* ═══════ MARQUEE ═══════ */
+        .mq {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, .03);
+            border-bottom: 1px solid rgba(255, 255, 255, .03);
+            overflow: hidden;
+            background: var(--bg)
+        }
+
+        .mq-track {
+            display: flex;
+            width: max-content;
+            animation: mqRun 40s linear infinite
+        }
+
+        .mq:hover .mq-track {
+            animation-play-state: paused
+        }
+
+        @keyframes mqRun {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        .mq-i {
+            flex-shrink: 0;
+            padding: 0 clamp(16px, 3vw, 40px);
+            font-size: clamp(1.2rem, 3vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -.01em;
+            white-space: nowrap;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, .08);
+            color: transparent;
+            transition: all .4s
+        }
+
+        .mq-i:hover {
+            -webkit-text-stroke-color: var(--r);
+            text-shadow: 0 0 50px rgba(200, 16, 46, .15)
+        }
+
+        .mq-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--r);
+            opacity: .3;
+            vertical-align: middle;
+            margin: 0 clamp(10px, 2vw, 26px)
+        }
+
+        /* ═══════ PARALLAX IMMERSIVE STRIPS ═══════ */
+        .strip {
+            position: relative;
+            overflow: hidden
+        }
+
+        .strip .px-bg img {
+            filter: brightness(.35) saturate(.65)
+        }
+
+        .strip .px-over {
+            background: linear-gradient(180deg, var(--bg) 0%, transparent 18%, transparent 82%, var(--bg) 100%)
+        }
+
+        .strip-c {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: clamp(20px, 4vw, 60px);
+            text-align: center
+        }
+
+        .strip-c h2 {
+            font-size: clamp(1.15rem, 2.8vw, 2.3rem);
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--g200);
+            max-width: 720px
+        }
+
+        .strip-c h2 strong {
+            color: var(--wp);
+            font-weight: 700
+        }
+
+        .strip-c h2 em {
+            font-style: normal;
+            color: var(--rb);
+            font-weight: 600
+        }
+
+        /* Heights for strips */
+        .strip-sm {
+            height: 50vh;
+            min-height: 350px
+        }
+
+        .strip-md {
+            height: 60vh;
+            min-height: 420px
+        }
+
+        .strip-lg {
+            height: 70vh;
+            min-height: 500px
+        }
+
+        /* ═══════ PARALLAX QUOTE BREAKS ═══════ */
+        .qbreak {
+            position: relative;
+            overflow: hidden
+        }
+
+        .qbreak .px-bg img {
+            filter: brightness(.28) saturate(.55) contrast(1.1)
+        }
+
+        .qbreak .px-over {
+            background: linear-gradient(180deg, var(--bg), transparent 15%, transparent 85%, var(--bg)), linear-gradient(90deg, rgba(11, 11, 11, .65), transparent 55%)
+        }
+
+        .qbreak-c {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 clamp(36px, 8vw, 110px);
+            max-width: 600px
+        }
+
+        .qbreak-c.right {
+            margin-left: auto;
+            text-align: right
+        }
+
+        .qbreak-c .qt {
+            font-size: clamp(1.5rem, 3.2vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.18;
+            letter-spacing: -.02em;
+            margin-bottom: 14px
+        }
+
+        .qbreak-c .qt em {
+            font-style: normal;
+            color: var(--rb)
+        }
+
+        .qbreak-c .at {
+            font-size: .6rem;
+            letter-spacing: .28em;
+            text-transform: uppercase;
+            color: var(--g500)
+        }
+
+        /* ═══════ DUAL PARALLAX (Split screen) ═══════ */
+        .dual-px {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 80vh;
+            position: relative
+        }
+
+        .dual-side {
+            position: relative;
+            overflow: hidden
+        }
+
+        .dual-side .px-bg {
+            top: -25%;
+            height: 150%
+        }
+
+        .dual-side .px-bg img {
+            filter: brightness(.35) saturate(.6)
+        }
+
+        .dual-side .px-over {
+            background: linear-gradient(180deg, rgba(11, 11, 11, .3), rgba(11, 11, 11, .6))
+        }
+
+        .dual-content {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: clamp(24px, 4vw, 50px)
+        }
+
+        .dual-num {
+            font-size: clamp(5rem, 10vw, 9rem);
+            font-weight: 900;
+            color: rgba(255, 255, 255, .04);
+            line-height: 1;
+            letter-spacing: -.05em
+        }
+
+        .dual-label {
+            font-size: .58rem;
+            letter-spacing: .35em;
+            text-transform: uppercase;
+            color: var(--r);
+            font-weight: 600;
+            margin-top: 10px
+        }
+
+        .dual-title {
+            font-size: clamp(1.3rem, 2.5vw, 2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-top: 8px
+        }
+
+        .dual-desc {
+            font-size: .8rem;
+            color: var(--g400);
+            font-weight: 300;
+            margin-top: 10px;
+            line-height: 1.6;
+            max-width: 380px
+        }
+
+        /* ═══════ PRODUCT SECTIONS ═══════ */
+        .ps {
+            padding: clamp(80px, 12vw, 160px) 0;
+            position: relative
+        }
+
+        .ps::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--bg);
+            z-index: 0
+        }
+
+        .pr {
+            display: flex;
+            align-items: center;
+            gap: clamp(36px, 6vw, 100px);
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0 clamp(24px, 5vw, 80px);
+            position: relative;
+            z-index: 2
+        }
+
+        .pr.rev {
+            flex-direction: row-reverse
+        }
+
+        .pr-img {
+            flex: 1.2;
+            position: relative
+        }
+
+        .pr-frame {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, .5);
+            transform: translateY(60px);
+            opacity: 0;
+            transition: all 1.2s var(--ease)
+        }
+
+        .pr-frame.vis {
+            transform: translateY(0);
+            opacity: 1
+        }
+
+        .pr-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 6s var(--ease)
+        }
+
+        .pr-frame:hover img {
+            transform: scale(1.07)
+        }
+
+        .pr-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(11, 11, 11, .5));
+            pointer-events: none
+        }
+
+        .pr-tag {
+            position: absolute;
+            bottom: 18px;
+            left: 18px;
+            z-index: 3;
+            padding: 6px 14px;
+            background: rgba(11, 11, 11, .72);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: 6px;
+            font-size: .52rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--g300);
+            font-weight: 500
+        }
+
+        .pr-badge {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            z-index: 3;
+            padding: 5px 12px;
+            background: var(--r);
+            border-radius: 4px;
+            font-size: .48rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 700
+        }
+
+        .pr-info {
+            flex: 1;
+            transform: translateY(45px);
+            opacity: 0;
+            transition: all 1.2s var(--ease) .12s
+        }
+
+        .pr-info.vis {
+            transform: translateY(0);
+            opacity: 1
+        }
+
+        .pr-cat {
+            font-size: .55rem;
+            letter-spacing: .38em;
+            text-transform: uppercase;
+            color: var(--r);
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .pr-cat::before {
+            content: '';
+            width: 26px;
+            height: 1px;
+            background: var(--r)
+        }
+
+        .pr-h {
+            font-size: clamp(1.7rem, 3.8vw, 3rem);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -.025em;
+            margin-bottom: 18px
+        }
+
+        .pr-p {
+            font-size: clamp(.84rem, 1.1vw, .96rem);
+            line-height: 1.8;
+            color: var(--g400);
+            font-weight: 300;
+            margin-bottom: 28px;
+            max-width: 460px
+        }
+
+        .pr-feats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .pr-feat {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 16px;
+            border-radius: 9px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            font-size: .65rem;
+            letter-spacing: .06em;
+            font-weight: 500;
+            color: var(--g200);
+            transition: all .35s
+        }
+
+        .pr-feat:hover {
+            border-color: var(--r);
+            background: rgba(200, 16, 46, .04)
+        }
+
+        .pr-feat .ic {
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            background: rgba(200, 16, 46, .08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .75rem
+        }
+
+        .pr-div {
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0 clamp(24px, 5vw, 80px)
+        }
+
+        .pr-div hr {
+            border: none;
+            height: 1px;
+            background: var(--border);
+            margin: clamp(50px, 8vw, 90px) 0
+        }
+
+        /* ═══════ PRODUCT GRID (Accessories) ═══════ */
+        .acc-section {
+            padding: clamp(60px, 10vw, 120px) clamp(20px, 5vw, 80px);
+            position: relative
+        }
+
+        .acc-header {
+            text-align: center;
+            margin-bottom: clamp(40px, 6vw, 70px)
+        }
+
+        .acc-label {
+            font-size: .58rem;
+            letter-spacing: .4em;
+            text-transform: uppercase;
+            color: var(--r);
+            font-weight: 600;
+            margin-bottom: 14px
+        }
+
+        .acc-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -.02em
+        }
+
+        .acc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1340px;
+            margin: 0 auto
+        }
+
+        .acc-card {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            background: var(--card);
+            border: 1px solid var(--border);
+            transition: all .5s var(--ease);
+            transform: translateY(40px);
+            opacity: 0
+        }
+
+        .acc-card.vis {
+            transform: translateY(0);
+            opacity: 1
+        }
+
+        .acc-card:hover {
+            border-color: var(--r);
+            transform: translateY(-6px) !important;
+            box-shadow: 0 20px 60px rgba(200, 16, 46, .1)
+        }
+
+        .acc-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 5s var(--ease);
+            filter: brightness(.55) saturate(.7)
+        }
+
+        .acc-card:hover img {
+            transform: scale(1.08);
+            filter: brightness(.65) saturate(.8)
+        }
+
+        .acc-card-over {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(11, 11, 11, .85));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: clamp(18px, 3vw, 28px);
+            z-index: 2
+        }
+
+        .acc-card-name {
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            font-weight: 700;
+            margin-bottom: 6px
+        }
+
+        .acc-card-desc {
+            font-size: .72rem;
+            color: var(--g400);
+            font-weight: 300;
+            line-height: 1.5
+        }
+
+        .acc-card-icon {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(200, 16, 46, .1);
+            border: 1px solid rgba(200, 16, 46, .2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            z-index: 3
+        }
+
+        /* ═══════ HORIZONTAL SCROLL GALLERY ═══════ */
+        .hgal {
+            padding: clamp(60px, 10vw, 120px) 0;
+            overflow: hidden;
+            position: relative
+        }
+
+        .hgal-header {
+            text-align: center;
+            margin-bottom: clamp(30px, 5vw, 50px);
+            padding: 0 24px
+        }
+
+        .hgal-track {
+            display: flex;
+            gap: 20px;
+            padding: 0 clamp(24px, 5vw, 80px);
+            animation: hscroll 30s linear infinite;
+            width: max-content
+        }
+
+        .hgal:hover .hgal-track {
+            animation-play-state: paused
+        }
+
+        @keyframes hscroll {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        .hgal-item {
+            flex-shrink: 0;
+            width: clamp(260px, 22vw, 340px);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 3/4
+        }
+
+        .hgal-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(.5) saturate(.65);
+            transition: all .5s
+        }
+
+        .hgal-item:hover img {
+            filter: brightness(.65) saturate(.8);
+            transform: scale(1.04)
+        }
+
+        .hgal-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(11, 11, 11, .7));
+            pointer-events: none
+        }
+
+        .hgal-item span {
+            position: absolute;
+            bottom: 18px;
+            left: 18px;
+            z-index: 2;
+            font-size: .7rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            font-weight: 600
+        }
+
+        /* ═══════ VISION ═══════ */
+        .vision {
+            padding: clamp(100px, 14vw, 200px) clamp(20px, 6vw, 80px);
+            text-align: center;
+            position: relative
+        }
+
+        .vis-eye {
+            font-size: .58rem;
+            letter-spacing: .48em;
+            text-transform: uppercase;
+            color: var(--r);
+            font-weight: 600;
+            margin-bottom: 42px
+        }
+
+        .vis-text {
+            font-size: clamp(1.1rem, 2.5vw, 2rem);
+            font-weight: 300;
+            line-height: 1.65;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            color: var(--g300)
+        }
+
+        .vis-text .vw {
+            display: inline;
+            opacity: .1;
+            transition: opacity .5s, color .5s
+        }
+
+        .vis-text .vw.on {
+            opacity: 1
+        }
+
+        .vis-text .vw.hl {
+            color: var(--rb);
+            font-weight: 600
+        }
+
+        .vis-stats {
+            display: flex;
+            justify-content: center;
+            gap: clamp(28px, 6vw, 80px);
+            flex-wrap: wrap
+        }
+
+        .vs-i {
+            text-align: center
+        }
+
+        .vs-n {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1
+        }
+
+        .vs-n em {
+            font-style: normal;
+            color: var(--r)
+        }
+
+        .vs-l {
+            font-size: .55rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--g500);
+            margin-top: 8px
+        }
+
+        /* ═══════ COUNTDOWN ═══════ */
+        .cdsec {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 24px
+        }
+
+        .cdsec .px-bg img {
+            filter: brightness(.18) saturate(.5)
+        }
+
+        .cdsec .px-over {
+            background: radial-gradient(ellipse at center, rgba(200, 16, 46, .05), transparent 60%), linear-gradient(180deg, var(--bg), rgba(11, 11, 11, .25) 50%, var(--bg))
+        }
+
+        .cd {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 680px
+        }
+
+        .cd-label {
+            font-size: .58rem;
+            letter-spacing: .45em;
+            text-transform: uppercase;
+            color: var(--r);
+            font-weight: 600;
+            margin-bottom: 46px
+        }
+
+        .cd-timer {
+            display: flex;
+            justify-content: center;
+            gap: clamp(8px, 3vw, 30px);
+            margin-bottom: 50px
+        }
+
+        .cd-u {
+            text-align: center
+        }
+
+        .cd-v {
+            font-size: clamp(2.6rem, 7vw, 5.2rem);
+            font-weight: 900;
+            line-height: 1;
+            color: var(--wp);
+            min-width: clamp(55px, 10vw, 105px);
+            position: relative;
+            transition: transform .15s
+        }
+
+        .cd-v::after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 28px;
+            height: 2px;
+            background: var(--r);
+            border-radius: 2px
+        }
+
+        .cd-ul {
+            font-size: .48rem;
+            letter-spacing: .32em;
+            text-transform: uppercase;
+            color: var(--g500);
+            margin-top: 16px
+        }
+
+        .cd-sep {
+            font-size: clamp(1.6rem, 3.5vw, 3rem);
+            font-weight: 200;
+            color: var(--r);
+            opacity: .35;
+            padding-top: 6px;
+            animation: bk 1.2s ease-in-out infinite
+        }
+
+        @keyframes bk {
+
+            0%,
+            100% {
+                opacity: .35
+            }
+
+            50% {
+                opacity: 0
+            }
+        }
+
+        .cd-su {
+            margin-top: 10px
+        }
+
+        .cd-su p {
+            font-size: .88rem;
+            color: var(--g400);
+            font-weight: 300;
+            margin-bottom: 20px
+        }
+
+        .cd-form {
+            display: flex;
+            max-width: 440px;
+            margin: 0 auto;
+            border-radius: 7px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: border-color .4s
+        }
+
+        .cd-form:focus-within {
+            border-color: var(--r)
+        }
+
+        .cd-input {
+            flex: 1;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, .03);
+            border: none;
+            color: var(--w);
+            font-family: var(--font);
+            font-size: .8rem;
+            outline: none
+        }
+
+        .cd-input::placeholder {
+            color: var(--g600)
+        }
+
+        .cd-btn {
+            padding: 16px 28px;
+            background: var(--r);
+            border: none;
+            color: #fff;
+            font-family: var(--font);
+            font-size: .56rem;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            transition: background .3s
+        }
+
+        .cd-btn:hover {
+            background: var(--rb)
+        }
+
+        .cd-ok {
+            display: none;
+            margin-top: 14px;
+            font-size: .78rem;
+            color: var(--rb);
+            letter-spacing: .08em
+        }
+
+        .cd-ok.show {
+            display: block;
+            animation: up .5s ease forwards
+        }
+
+        /* ═══════ FOOTER ═══════ */
+        .footer {
+            padding: 76px clamp(24px, 5vw, 80px) 34px;
+            border-top: 1px solid rgba(255, 255, 255, .03);
+            background: #000
+        }
+
+        .ft-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1340px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 36px
+        }
+
+        .ft-brand {
+            max-width: 350px
+        }
+
+        .ft-logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            margin-bottom: 12px
+        }
+
+        .ft-logo b {
+            color: var(--r);
+            font-weight: 800
+        }
+
+        .ft-desc {
+            font-size: .78rem;
+            color: var(--g500);
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 16px
+        }
+
+        .ft-loc {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: .65rem;
+            color: var(--g500);
+            letter-spacing: .1em
+        }
+
+        .ft-loc svg {
+            width: 12px;
+            height: 12px;
+            fill: var(--r)
+        }
+
+        .ft-right {
+            text-align: right
+        }
+
+        .ft-cl {
+            font-size: .5rem;
+            letter-spacing: .35em;
+            text-transform: uppercase;
+            color: var(--g600);
+            margin-bottom: 9px
+        }
+
+        .ft-email {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--w);
+            transition: color .3s;
+            letter-spacing: .04em
+        }
+
+        .ft-email:hover {
+            color: var(--r)
+        }
+
+        .ft-socs {
+            display: flex;
+            gap: 12px;
+            margin-top: 22px;
+            justify-content: flex-end
+        }
+
+        .ft-s {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--g500);
+            transition: all .35s
+        }
+
+        .ft-s:hover {
+            border-color: var(--r);
+            color: var(--r);
+            background: rgba(200, 16, 46, .05);
+            transform: translateY(-3px)
+        }
+
+        .ft-s svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor
+        }
+
+        .ft-bot {
+            max-width: 1340px;
+            margin: 50px auto 0;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, .03);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .ft-copy {
+            font-size: .58rem;
+            color: rgba(255, 255, 255, .18);
+            letter-spacing: .1em
+        }
+
+        .ft-tuned {
+            font-size: .56rem;
+            letter-spacing: .38em;
+            text-transform: uppercase;
+            color: var(--r);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 9px
+        }
+
+        .ft-tuned i {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--r);
+            animation: pulse 1.5s ease-in-out infinite
+        }
+
+        /* ═══════ SCROLL REVEALS ═══════ */
+        .sr {
+            opacity: 0;
+            transform: translateY(45px);
+            transition: all 1.1s var(--ease)
+        }
+
+        .sr.vis {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .sr-d1 {
+            transition-delay: .1s
+        }
+
+        .sr-d2 {
+            transition-delay: .2s
+        }
+
+        .sr-d3 {
+            transition-delay: .3s
+        }
+
+        .sr-d4 {
+            transition-delay: .4s
+        }
+
+        /* ═══════ RESPONSIVE ═══════ */
+        @media(max-width:1024px) {
+
+            .pr,
+            .pr.rev {
+                flex-direction: column;
+                text-align: center
+            }
+
+            .pr-cat {
+                justify-content: center
+            }
+
+            .pr-cat::before {
+                display: none
+            }
+
+            .pr-p {
+                margin-left: auto;
+                margin-right: auto
+            }
+
+            .pr-feats {
+                justify-content: center
+            }
+
+            .dual-px {
+                grid-template-columns: 1fr
+            }
+
+            .qbreak-c,
+            .qbreak-c.right {
+                max-width: 100%;
+                text-align: center;
+                margin: 0 auto
+            }
+
+            .acc-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+            }
+        }
+
+        @media(max-width:768px) {
+            .nav {
+                padding: 14px 18px
+            }
+
+            .nav.sc {
+                padding: 11px 18px
+            }
+
+            .nav-loc {
+                display: none
+            }
+
+            .cd-form {
+                flex-direction: column;
+                border-radius: 8px
+            }
+
+            .ft-grid {
+                flex-direction: column;
+                text-align: center
+            }
+
+            .ft-right {
+                text-align: center
+            }
+
+            .ft-socs {
+                justify-content: center
+            }
+
+            .ft-bot {
+                flex-direction: column;
+                text-align: center
+            }
+
+            .dual-px {
+                min-height: auto
+            }
+
+            .dual-side {
+                min-height: 50vh
+            }
+        }
+
+        @media(max-width:480px) {
+            .hero-btns {
+                flex-direction: column;
+                align-items: center
+            }
+
+            .bf,
+            .bg {
+                width: 100%;
+                max-width: 280px;
+                text-align: center
+            }
+
+            .acc-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div id="pre">
+        <div class="pl-logo">MAFHH <b>SPORTS</b></div>
+        <div class="pl-bar"><i id="pbar"></i></div>
+        <div class="pl-pct" id="ppct">0 %</div>
+    </div>
+
+    <div class="cur" id="cur"></div>
+    <div class="cur-f" id="curf"></div>
+    <div class="grain"></div>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <a href="#" class="logo">
+            <div class="logo-m">M</div>
+            <div class="logo-t">MAFHH <b>SPORTS</b></div>
+        </a>
+        <div class="nav-r">
+            <div class="nav-loc">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                </svg>
+                Bhilai, Chhattisgarh
+            </div>
+            <button class="nav-btn" onclick="goTo('cdsec')">Notify Me</button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════
+     HERO
+     ═══════════════════════════════════ -->
+    <section class="hero px" id="hero">
+        <div class="px-bg" data-speed="0.3">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=85" alt="Dark Gym"
+                loading="eager">
+        </div>
+        <div class="px-over"></div>
+        <div class="grain" style="z-index:2"></div>
+        <div class="hero-c">
+            <div class="hero-tag"><i></i> Launching 2026</div>
+            <h1 class="hero-h1">
+                <span class="ln"><span>Something</span></span>
+                <span class="ln"><span><em class="ac">Powerful</em> Is</span></span>
+                <span class="ln"><span>Coming.</span></span>
+            </h1>
+            <p class="hero-sub">Premium gym wear, sportswear & accessories — mats, belts, bags, bottles and everything
+                you need to dominate every rep. Built in Bhilai. Built for champions.</p>
+            <div class="hero-btns">
+                <button class="bf" onclick="goTo('cdsec')">Get Early Access</button>
+                <button class="bg" onclick="goTo('vision')">Our Vision</button>
+            </div>
+        </div>
+        <div class="hero-sc"><span>Scroll to explore</span>
+            <div class="sc-line"></div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="mq">
+        <div class="mq-track">
+            <span class="mq-i">GYM WEAR<span class="mq-dot"></span></span>
+            <span class="mq-i">SPORTSWEAR<span class="mq-dot"></span></span>
+            <span class="mq-i">YOGA MATS<span class="mq-dot"></span></span>
+            <span class="mq-i">LIFTING BELTS<span class="mq-dot"></span></span>
+            <span class="mq-i">GYM BAGS<span class="mq-dot"></span></span>
+            <span class="mq-i">BOTTLES & SIPPERS<span class="mq-dot"></span></span>
+            <span class="mq-i">GLOVES<span class="mq-dot"></span></span>
+            <span class="mq-i">RESISTANCE BANDS<span class="mq-dot"></span></span>
+            <span class="mq-i">GYM WEAR<span class="mq-dot"></span></span>
+            <span class="mq-i">SPORTSWEAR<span class="mq-dot"></span></span>
+            <span class="mq-i">YOGA MATS<span class="mq-dot"></span></span>
+            <span class="mq-i">LIFTING BELTS<span class="mq-dot"></span></span>
+            <span class="mq-i">GYM BAGS<span class="mq-dot"></span></span>
+            <span class="mq-i">BOTTLES & SIPPERS<span class="mq-dot"></span></span>
+            <span class="mq-i">GLOVES<span class="mq-dot"></span></span>
+            <span class="mq-i">RESISTANCE BANDS<span class="mq-dot"></span></span>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+     PARALLAX INTRO STRIP
+     ═══════════════════════════════════ -->
+    <div class="strip strip-md px">
+        <div class="px-bg" data-speed="0.15">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1920&q=85" alt="Training"
+                loading="lazy">
+        </div>
+        <div class="px-over"></div>
+        <div class="strip-c">
+            <h2 class="sr">We didn't build another brand.<br>We engineered a <em>movement</em> — where every mat, belt,
+                bag &amp; bottle is crafted for those who <strong>push beyond limits.</strong></h2>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+     PRODUCT 1: GYM WEAR
+     ═══════════════════════════════════ -->
+    <section class="ps">
+        <div class="pr">
+            <div class="pr-img">
+                <div class="pr-frame" data-anim>
+                    <img src="https://images.unsplash.com/photo-1521804906057-1df8fdb718b7?w=960&q=80" alt="Gym Wear"
+                        loading="lazy">
+                    <span class="pr-tag">Gym Wear Collection</span>
+                    <span class="pr-badge">New</span>
+                </div>
+            </div>
+            <div class="pr-info" data-anim>
+                <div class="pr-cat">Gym Wear</div>
+                <h2 class="pr-h">Engineered<br>for Strength.</h2>
+                <p class="pr-p">Ultra-lightweight compression tanks, breathable tees, and performance joggers. Every
+                    thread designed to keep you cool under pressure and powerful through every set.</p>
+                <div class="pr-feats">
+                    <div class="pr-feat"><span class="ic">🌡️</span> Thermo-Regulate</div>
+                    <div class="pr-feat"><span class="ic">💧</span> Sweat-Wicking</div>
+                    <div class="pr-feat"><span class="ic">🪶</span> Ultra-Light</div>
+                    <div class="pr-feat"><span class="ic">💪</span> 4-Way Stretch</div>
+                </div>
+            </div>
+        </div>
+        <div class="pr-div">
+            <hr>
+        </div>
+
+        <!-- PRODUCT 2: SPORTSWEAR -->
+        <div class="pr rev">
+            <div class="pr-img">
+                <div class="pr-frame" data-anim>
+                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=960&q=80" alt="Sportswear"
+                        loading="lazy">
+                    <span class="pr-tag">Sportswear Line</span>
+                    <span class="pr-badge">Premium</span>
+                </div>
+            </div>
+            <div class="pr-info" data-anim>
+                <div class="pr-cat">Sportswear</div>
+                <h2 class="pr-h">Move Without<br>Limits.</h2>
+                <p class="pr-p">From track pants to training hoodies, our sportswear collection is built for athletes
+                    who live and breathe movement. Street-ready. Gym-proven. No compromises.</p>
+                <div class="pr-feats">
+                    <div class="pr-feat"><span class="ic">⚡</span> Quick-Dry</div>
+                    <div class="pr-feat"><span class="ic">🎯</span> Tailored Fit</div>
+                    <div class="pr-feat"><span class="ic">🛡️</span> Anti-Odor</div>
+                    <div class="pr-feat"><span class="ic">🌀</span> Flex-Weave</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+     PARALLAX QUOTE BREAK 1
+     ═══════════════════════════════════ -->
+    <div class="qbreak px" style="height:60vh;min-height:420px">
+        <div class="px-bg" data-speed="0.12">
+            <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1920&q=85" alt="Athlete"
+                loading="lazy">
+        </div>
+        <div class="px-over"></div>
+        <div class="qbreak-c">
+            <p class="qt sr">"The body achieves<br>what the <em>mind believes.</em>"</p>
+            <span class="at sr sr-d1">— The MAFHH Philosophy</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+     PRODUCT 3: MATS & BELTS
+     ═══════════════════════════════════ -->
+    <section class="ps">
+        <div class="pr">
+            <div class="pr-img">
+                <div class="pr-frame" data-anim>
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=960&q=80"
+                        alt="Yoga Mat Training" loading="lazy">
+                    <span class="pr-tag">Mats & Gear</span>
+                </div>
+            </div>
+            <div class="pr-info" data-anim>
+                <div class="pr-cat">Mats & Training Gear</div>
+                <h2 class="pr-h">Ground Your<br>Power.</h2>
+                <p class="pr-p">Premium yoga mats, exercise mats, and training pads with superior grip and cushioning.
+                    From stretching to core work — your foundation starts here.</p>
+                <div class="pr-feats">
+                    <div class="pr-feat"><span class="ic">🧘</span> Anti-Slip</div>
+                    <div class="pr-feat"><span class="ic">🛡️</span> Shock Absorb</div>
+                    <div class="pr-feat"><span class="ic">♻️</span> Eco-Material</div>
+                    <div class="pr-feat"><span class="ic">📐</span> Extra-Thick</div>
+                </div>
+            </div>
+        </div>
+        <div class="pr-div">
+            <hr>
+        </div>
+
+        <!-- PRODUCT 4: BELTS & GLOVES -->
+        <div class="pr rev">
+            <div class="pr-img">
+                <div class="pr-frame" data-anim>
+                    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=960&q=80"
+                        alt="Lifting Gear" loading="lazy">
+                    <span class="pr-tag">Lifting Essentials</span>
+                    <span class="pr-badge">Pro</span>
+                </div>
+            </div>
+            <div class="pr-info" data-anim>
+                <div class="pr-cat">Belts & Gloves</div>
+                <h2 class="pr-h">Lift Heavier.<br>Stay Safer.</h2>
+                <p class="pr-p">Premium leather lifting belts, padded gloves, wrist wraps, and knee sleeves. Engineered
+                    for serious lifters who demand maximum support and zero compromise.</p>
+                <div class="pr-feats">
+                    <div class="pr-feat"><span class="ic">🏋️</span> Heavy-Duty</div>
+                    <div class="pr-feat"><span class="ic">🧤</span> Pro-Grip</div>
+                    <div class="pr-feat"><span class="ic">🔒</span> Secure Lock</div>
+                    <div class="pr-feat"><span class="ic">💎</span> Premium Leather</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+     DUAL PARALLAX SPLIT
+     ═══════════════════════════════════ -->
+    <div class="dual-px">
+        <div class="dual-side px">
+            <div class="px-bg" data-speed="0.08">
+                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=960&q=80" alt="Gym Interior"
+                    loading="lazy">
+            </div>
+            <div class="px-over" style="background:linear-gradient(180deg,rgba(11,11,11,.3),rgba(11,11,11,.7))"></div>
+            <div class="dual-content sr">
+                <div class="dual-num">01</div>
+                <div class="dual-label">Bags & Carry</div>
+                <div class="dual-title">Pack Your Power.</div>
+                <div class="dual-desc">Durable gym duffles, sling bags, and backpacks with dedicated compartments for
+                    shoes, bottles, and gear.</div>
+            </div>
+        </div>
+        <div class="dual-side px">
+            <div class="px-bg" data-speed="0.13">
+                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=960&q=80" alt="Gym"
+                    loading="lazy">
+            </div>
+            <div class="px-over" style="background:linear-gradient(180deg,rgba(11,11,11,.3),rgba(11,11,11,.7))"></div>
+            <div class="dual-content sr sr-d2">
+                <div class="dual-num">02</div>
+                <div class="dual-label">Bottles & Sippers</div>
+                <div class="dual-title">Hydrate. Dominate.</div>
+                <div class="dual-desc">Stainless steel insulated bottles, protein shakers, and leak-proof sippers
+                    designed for every workout.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+     PARALLAX QUOTE BREAK 2
+     ═══════════════════════════════════ -->
+    <div class="qbreak px" style="height:55vh;min-height:380px">
+        <div class="px-bg" data-speed="0.1">
+            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=1920&q=85" alt="Running"
+                loading="lazy">
+        </div>
+        <div class="px-over"></div>
+        <div class="qbreak-c right">
+            <p class="qt sr">"Don't stop when<br>you're tired. Stop<br>when you're <em>done.</em>"</p>
+            <span class="at sr sr-d1">— Built Different</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+     PRODUCT 5: BAGS
+     ═══════════════════════════════════ -->
+    <section class="ps">
+        <div class="pr">
+            <div class="pr-img">
+                <div class="pr-frame" data-anim>
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=960&q=80" alt="Gym Bag"
+                        loading="lazy">
+                    <span class="pr-tag">Bags Collection</span>
+                </div>
+            </div>
+            <div class="pr-info" data-anim>
+                <div class="pr-cat">Gym Bags</div>
+                <h2 class="pr-h">Carry Your<br>Ambition.</h2>
+                <p class="pr-p">From compact sling bags to spacious gym duffles — waterproof, compartmentalized, and
+                    designed for the athlete's lifestyle. Shoe pockets, wet-dry separation, and style that speaks
+                    volumes.</p>
+                <div class="pr-feats">
+                    <div class="pr-feat"><span class="ic">🎒</span> Waterproof</div>
+                    <div class="pr-feat"><span class="ic">👟</span> Shoe Pocket</div>
+                    <div class="pr-feat"><span class="ic">🔗</span> YKK Zippers</div>
+                    <div class="pr-feat"><span class="ic">📦</span> Multi-Pocket</div>
+                </div>
+            </div>
+        </div>
+        <div class="pr-div">
+            <hr>
+        </div>
+
+        <!-- PRODUCT 6: BOTTLES & SIPPERS -->
+        <div class="pr rev">
+            <div class="pr-img">
+                <div class="pr-frame" data-anim>
+                    <img src="https://images.unsplash.com/photo-1523362628745-0c100fc988a6?w=960&q=80"
+                        alt="Water Bottles" loading="lazy">
+                    <span class="pr-tag">Hydration Line</span>
+                    <span class="pr-badge">Essential</span>
+                </div>
+            </div>
+            <div class="pr-info" data-anim>
+                <div class="pr-cat">Bottles & Sippers</div>
+                <h2 class="pr-h">Hydration,<br>Perfected.</h2>
+                <p class="pr-p">Premium stainless steel insulated bottles, BPA-free protein shakers, and leak-proof
+                    sippers. Keeps cold for 24hrs, hot for 12. Every sip fuels your next set.</p>
+                <div class="pr-feats">
+                    <div class="pr-feat"><span class="ic">🧊</span> 24hr Cold</div>
+                    <div class="pr-feat"><span class="ic">🔥</span> 12hr Hot</div>
+                    <div class="pr-feat"><span class="ic">💧</span> Leak-Proof</div>
+                    <div class="pr-feat"><span class="ic">🫙</span> BPA-Free</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+     HORIZONTAL SCROLL GALLERY
+     ═══════════════════════════════════ -->
+    <div class="hgal">
+        <div class="hgal-header">
+            <div class="acc-label sr">The Full Arsenal</div>
+            <div class="acc-title sr sr-d1">Everything You Need. Nothing You Don't.</div>
+        </div>
+        <div class="hgal-track">
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?w=500&q=80"
+                    alt="Resistance Bands" loading="lazy"><span>Resistance Bands</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=500&q=80"
+                    alt="Gym Towels" loading="lazy"><span>Gym Towels</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80"
+                    alt="Yoga Wear" loading="lazy"><span>Yoga Wear</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80"
+                    alt="Training Shorts" loading="lazy"><span>Training Wear</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1576243345690-4e4b79b63288?w=500&q=80"
+                    alt="Wrist Wraps" loading="lazy"><span>Support Gear</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=500&q=80"
+                    alt="Compression" loading="lazy"><span>Compression Wear</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?w=500&q=80"
+                    alt="Bands" loading="lazy"><span>Resistance Bands</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=500&q=80"
+                    alt="Towels" loading="lazy"><span>Gym Towels</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80"
+                    alt="Yoga" loading="lazy"><span>Yoga Wear</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80"
+                    alt="Training" loading="lazy"><span>Training Wear</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1576243345690-4e4b79b63288?w=500&q=80"
+                    alt="Wraps" loading="lazy"><span>Support Gear</span></div>
+            <div class="hgal-item"><img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=500&q=80"
+                    alt="Compression" loading="lazy"><span>Compression Wear</span></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+     PARALLAX QUOTE BREAK 3
+     ═══════════════════════════════════ -->
+    <div class="qbreak px" style="height:55vh;min-height:380px">
+        <div class="px-bg" data-speed="0.09">
+            <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=1920&q=85" alt="Athlete"
+                loading="lazy">
+        </div>
+        <div class="px-over"></div>
+        <div class="qbreak-c">
+            <p class="qt sr">"Your only limit<br>is <em>you.</em>"</p>
+            <span class="at sr sr-d1">— No Excuses</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+     ACCESSORIES GRID
+     ═══════════════════════════════════ -->
+    <section class="acc-section">
+        <div class="acc-header">
+            <div class="acc-label sr">Accessories</div>
+            <div class="acc-title sr sr-d1">Gear Up. Every Detail Matters.</div>
+        </div>
+        <div class="acc-grid">
+            <div class="acc-card" data-anim>
+                <img src="https://images.unsplash.com/photo-1616279969965-b5d8ae30b100?w=600&q=80" alt="Gym Gloves"
+                    loading="lazy">
+                <div class="acc-card-over">
+                    <div class="acc-card-name">Lifting Gloves</div>
+                    <div class="acc-card-desc">Padded palm, breathable back, secure wrist closure.</div>
+                </div>
+                <div class="acc-card-icon">🧤</div>
+            </div>
+            <div class="acc-card" data-anim>
+                <img src="https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?w=600&q=80"
+                    alt="Resistance Bands" loading="lazy">
+                <div class="acc-card-over">
+                    <div class="acc-card-name">Resistance Bands</div>
+                    <div class="acc-card-desc">Multi-level resistance for every training style.</div>
+                </div>
+                <div class="acc-card-icon">🔴</div>
+            </div>
+            <div class="acc-card" data-anim>
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Yoga Mat"
+                    loading="lazy">
+                <div class="acc-card-over">
+                    <div class="acc-card-name">Yoga Mats</div>
+                    <div class="acc-card-desc">Anti-slip, extra cushion, eco-friendly materials.</div>
+                </div>
+                <div class="acc-card-icon">🧘</div>
+            </div>
+            <div class="acc-card" data-anim>
+                <img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=600&q=80" alt="Gym Towels"
+                    loading="lazy">
+                <div class="acc-card-over">
+                    <div class="acc-card-name">Gym Towels</div>
+                    <div class="acc-card-desc">Quick-dry microfiber, compact & ultra-absorbent.</div>
+                </div>
+                <div class="acc-card-icon">🏖️</div>
+            </div>
+            <div class="acc-card" data-anim>
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80" alt="Wrist Wraps"
+                    loading="lazy">
+                <div class="acc-card-over">
+                    <div class="acc-card-name">Wrist Wraps</div>
+                    <div class="acc-card-desc">Maximum support for heavy pressing movements.</div>
+                </div>
+                <div class="acc-card-icon">🔗</div>
+            </div>
+            <div class="acc-card" data-anim>
+                <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=600&q=80"
+                    alt="Compression Wear" loading="lazy">
+                <div class="acc-card-over">
+                    <div class="acc-card-name">Knee Sleeves</div>
+                    <div class="acc-card-desc">7mm neoprene for squats, deadlifts & beyond.</div>
+                </div>
+                <div class="acc-card-icon">🦵</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+     FULL WIDTH PARALLAX STRIP
+     ═══════════════════════════════════ -->
+    <div class="strip strip-lg px">
+        <div class="px-bg" data-speed="0.14">
+            <img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a?w=1920&q=85" alt="Gym"
+                loading="lazy">
+        </div>
+        <div class="px-over"
+            style="background:linear-gradient(180deg,var(--bg),transparent 20%,transparent 80%,var(--bg))"></div>
+        <div class="strip-c">
+            <h2 class="sr">From the first stretch on your <em>mat</em> to the last rep with your <strong>belt strapped
+                    tight</strong> — every product carries the <em>MAFHH promise</em>: uncompromising quality.</h2>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+     BRAND VISION
+     ═══════════════════════════════════ -->
+    <section class="vision" id="vision">
+        <div class="vis-eye sr">Our Story</div>
+        <p class="vis-text" id="vt">
+            <span class="vw">We</span>
+            <span class="vw">believe</span>
+            <span class="vw">that</span>
+            <span class="vw hl">performance</span>
+            <span class="vw">isn't</span>
+            <span class="vw">just</span>
+            <span class="vw">about</span>
+            <span class="vw hl">what you wear</span>
+            <span class="vw">—</span>
+            <span class="vw">it's</span>
+            <span class="vw">about</span>
+            <span class="vw">every</span>
+            <span class="vw hl">tool you carry.</span>
+            <span class="vw">Your</span>
+            <span class="vw hl">mat,</span>
+            <span class="vw">your</span>
+            <span class="vw hl">belt,</span>
+            <span class="vw">your</span>
+            <span class="vw hl">bag,</span>
+            <span class="vw">your</span>
+            <span class="vw hl">bottle</span>
+            <span class="vw">—</span>
+            <span class="vw">each</span>
+            <span class="vw">one</span>
+            <span class="vw">is</span>
+            <span class="vw">part</span>
+            <span class="vw">of</span>
+            <span class="vw">your</span>
+            <span class="vw hl">armor.</span>
+            <span class="vw">Born</span>
+            <span class="vw">in</span>
+            <span class="vw hl">Bhilai,</span>
+            <span class="vw hl">Chhattisgarh</span>
+            <span class="vw">—</span>
+            <span class="vw">MAFHH</span>
+            <span class="vw">SPORTS</span>
+            <span class="vw">is</span>
+            <span class="vw">building</span>
+            <span class="vw">the</span>
+            <span class="vw">future</span>
+            <span class="vw">of</span>
+            <span class="vw hl">athletic excellence.</span>
+        </p>
+        <div class="vis-stats sr">
+            <div class="vs-i">
+                <div class="vs-n" data-ct="50">0<em>+</em></div>
+                <div class="vs-l">Products at Launch</div>
+            </div>
+            <div class="vs-i">
+                <div class="vs-n">100<em>%</em></div>
+                <div class="vs-l">Premium Quality</div>
+            </div>
+            <div class="vs-i">
+                <div class="vs-n">6<em>+</em></div>
+                <div class="vs-l">Product Categories</div>
+            </div>
+            <div class="vs-i">
+                <div class="vs-n">∞</div>
+                <div class="vs-l">Possibilities</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+     PARALLAX BREAK FINAL
+     ═══════════════════════════════════ -->
+    <div class="qbreak px" style="height:50vh;min-height:340px">
+        <div class="px-bg" data-speed="0.11">
+            <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=1920&q=85" alt="Dark Gym"
+                loading="lazy">
+        </div>
+        <div class="px-over"></div>
+        <div class="qbreak-c right">
+            <p class="qt sr">"Champions aren't born.<br>They're <em>built.</em>"</p>
+            <span class="at sr sr-d1">— MAFHH SPORTS</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+     COUNTDOWN
+     ═══════════════════════════════════ -->
+    <section class="cdsec px" id="cdsec">
+        <div class="px-bg" data-speed="0.06">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=85" alt="Gym"
+                loading="lazy">
+        </div>
+        <div class="px-over"></div>
+        <div class="grain" style="z-index:2"></div>
+        <div class="cd">
+            <div class="cd-label sr">🚀 Launch Countdown</div>
+            <div class="cd-timer sr sr-d1">
+                <div class="cd-u">
+                    <div class="cd-v" id="dd">00</div>
+                    <div class="cd-ul">Days</div>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-u">
+                    <div class="cd-v" id="hh">00</div>
+                    <div class="cd-ul">Hours</div>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-u">
+                    <div class="cd-v" id="mm">00</div>
+                    <div class="cd-ul">Minutes</div>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-u">
+                    <div class="cd-v" id="ss">00</div>
+                    <div class="cd-ul">Seconds</div>
+                </div>
+            </div>
+            <div class="cd-su sr sr-d2">
+                <p>Be the first to know. Get exclusive early access & launch-day discounts.</p>
+                <form class="cd-form" id="cf" onsubmit="subForm(event)">
+                    <input class="cd-input" type="email" placeholder="Enter your email address" required>
+                    <button class="cd-btn" type="submit">Notify Me</button>
+                </form>
+                <div class="cd-ok" id="cok">✓ You're on the list! We'll notify you at launch.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════ -->
+    <footer class="footer">
+        <div class="ft-grid">
+            <div class="ft-brand">
+                <div class="ft-logo">MAFHH <b>SPORTS</b></div>
+                <p class="ft-desc">Premium gym wear, sportswear & accessories — mats, belts, bags, bottles, sippers,
+                    gloves, bands and everything for your fitness journey. Launching soon.</p>
+                <div class="ft-loc">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                    </svg>
+                    Bhilai, Chhattisgarh, India
+                </div>
+            </div>
+            <div class="ft-right">
+                <div class="ft-cl">Get in Touch</div>
+                <a href="mailto:hello@mafhhsports.com" class="ft-email">hello@mafhhsports.com</a>
+                <div class="ft-socs">
+                    <a href="#" class="ft-s" aria-label="Instagram"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg></a>
+                    <a href="#" class="ft-s" aria-label="X"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg></a>
+                    <a href="#" class="ft-s" aria-label="Facebook"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg></a>
+                    <a href="#" class="ft-s" aria-label="YouTube"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="ft-bot">
+            <span class="ft-copy">© 2026 MAFHH SPORTS. All rights reserved. Bhilai, Chhattisgarh, India.</span>
+            <span class="ft-tuned"><i></i> Stay Tuned</span>
+        </div>
+    </footer>
+
+
+    <!-- ═══════════════════════════════════
+     JAVASCRIPT ENGINE
+     ═══════════════════════════════════ -->
+    <script>
+        /* ── PRELOADER ── */
+        (() => { const b = document.getElementById('pbar'), c = document.getElementById('ppct'); let p = 0; const iv = setInterval(() => { p += Math.random() * 16 + 5; if (p > 100) p = 100; b.style.width = p + '%'; c.textContent = Math.floor(p) + ' %'; if (p >= 100) { clearInterval(iv); setTimeout(() => document.getElementById('pre').classList.add('done'), 300) } }, 110) })();
+
+        /* ── CURSOR ── */
+        (() => {
+            if (innerWidth < 1025) return; document.body.style.cursor = 'none';
+            const c = document.getElementById('cur'), f = document.getElementById('curf');
+            let mx = 0, my = 0, fx = 0, fy = 0;
+            document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; c.style.left = mx + 'px'; c.style.top = my + 'px' });
+            (function loop() { fx += (mx - fx) * .12; fy += (my - fy) * .12; f.style.left = fx + 'px'; f.style.top = fy + 'px'; requestAnimationFrame(loop) })();
+            document.querySelectorAll('a,button,input,.pr-frame,.acc-card,.ft-s,.hgal-item').forEach(el => { el.style.cursor = 'none'; el.addEventListener('mouseenter', () => f.classList.add('on')); el.addEventListener('mouseleave', () => f.classList.remove('on')) });
+        })();
+
+        /* ── NAV ── */
+        addEventListener('scroll', () => document.getElementById('nav').classList.toggle('sc', scrollY > 80), { passive: true });
+
+        /* ── DEEP PARALLAX ENGINE ── */
+        (() => {
+            const bgs = document.querySelectorAll('.px-bg[data-speed]');
+            let ticking = false;
+            function update() {
+                const sy = scrollY; const wh = innerHeight;
+                bgs.forEach(bg => {
+                    const sec = bg.closest('.px,.hero,.qbreak,.strip,.cdsec,.dual-side');
+                    if (!sec) return;
+                    const rect = sec.getBoundingClientRect();
+                    // Only animate if section is near viewport
+                    if (rect.bottom < -200 || rect.top > wh + 200) return;
+                    const speed = parseFloat(bg.dataset.speed) || 0.1;
+                    const center = rect.top + rect.height / 2 - wh / 2;
+                    bg.style.transform = `translate3d(0,${center * speed * -1}px,0)`;
+                });
+                ticking = false;
+            }
+            addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update) } }, { passive: true });
+            update();
+        })();
+
+        /* ── SCROLL REVEAL ── */
+        (() => {
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis') });
+            }, { threshold: .13, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.sr,[data-anim],.pr-frame,.pr-info,.acc-card').forEach(e => obs.observe(e));
+        })();
+
+        /* ── ACC CARDS STAGGER ── */
+        (() => {
+            const cards = document.querySelectorAll('.acc-card');
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        const idx = [...cards].indexOf(e.target);
+                        e.target.style.transitionDelay = (idx % 3) * .12 + 's';
+                        e.target.classList.add('vis');
+                    }
+                });
+            }, { threshold: .1 });
+            cards.forEach(c => obs.observe(c));
+        })();
+
+        /* ── BRAND VISION WORDS ── */
+        (() => {
+            const ws = document.querySelectorAll('#vt .vw'); let fired = false;
+            new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting && !fired) { fired = true; ws.forEach((w, i) => setTimeout(() => w.classList.add('on'), i * 65)) } });
+            }, { threshold: .22 }).observe(document.getElementById('vt'));
+        })();
+
+        /* ── COUNTER ── */
+        (() => {
+            document.querySelectorAll('[data-ct]').forEach(el => {
+                new IntersectionObserver(entries => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) {
+                            const t = parseInt(el.dataset.ct); let c = 0; const inc = t / 45;
+                            const iv = setInterval(() => { c += inc; if (c >= t) { c = t; clearInterval(iv) } el.innerHTML = Math.floor(c) + '<em>+</em>' }, 30);
+                            e.target._obs && e.target._obs.unobserve(el);
+                        }
+                    });
+                }, { threshold: .5 }).observe(el);
+            });
+        })();
+
+        /* ── COUNTDOWN ── */
+        (() => {
+            const L = new Date(); L.setDate(L.getDate() + 90);
+            function tick() {
+                const d = L - new Date(); if (d <= 0) return;
+                document.getElementById('dd').textContent = String(Math.floor(d / 864e5)).padStart(2, '0');
+                document.getElementById('hh').textContent = String(Math.floor(d % 864e5 / 36e5)).padStart(2, '0');
+                document.getElementById('mm').textContent = String(Math.floor(d % 36e5 / 6e4)).padStart(2, '0');
+                const se = document.getElementById('ss'), nv = String(Math.floor(d % 6e4 / 1e3)).padStart(2, '0');
+                if (se.textContent !== nv) { se.style.transform = 'scale(1.08)'; se.textContent = nv; setTimeout(() => se.style.transform = 'scale(1)', 110) }
+            }
+            tick(); setInterval(tick, 1e3);
+        })();
+
+        /* ── PRODUCT IMAGE TILT ── */
+        (() => {
+            document.querySelectorAll('.pr-frame').forEach(f => {
+                f.addEventListener('mousemove', e => {
+                    const r = f.getBoundingClientRect();
+                    const x = (e.clientX - r.left) / r.width - .5;
+                    const y = (e.clientY - r.top) / r.height - .5;
+                    f.style.transform = `perspective(800px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) scale(1.02)`;
+                    f.style.transition = 'none';
+                });
+                f.addEventListener('mouseleave', () => { f.style.transform = ''; f.style.transition = 'all 1.2s var(--ease)' });
+            });
+        })();
+
+        /* ── HERO MOUSE PARALLAX ── */
+        (() => {
+            const h = document.getElementById('hero');
+            h.addEventListener('mousemove', e => {
+                const r = h.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - .5;
+                const y = (e.clientY - r.top) / r.height - .5;
+                h.querySelector('.px-over').style.background = `
+      linear-gradient(180deg,rgba(11,11,11,.55)0%,rgba(11,11,11,.15)40%,rgba(11,11,11,.75)100%),
+      radial-gradient(circle at ${50 + x * 18}% ${50 + y * 18}%,rgba(200,16,46,.1),transparent 50%)`;
+            });
+        })();
+
+        /* ── SIGNUP ── */
+        function subForm(e) { e.preventDefault(); document.getElementById('cf').style.display = 'none'; document.getElementById('cok').classList.add('show') }
+        function goTo(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'center' }) }
+    </script>
+</body>
+
+</html>
